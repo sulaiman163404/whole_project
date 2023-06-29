@@ -122,3 +122,45 @@ clearConverter.addEventListener('click', () => {
         input.value = '';
     })
 })
+
+
+// ДЗ 6 урока
+
+const card = document.querySelector('.card')
+const btnPrev = document.querySelector('#btn-prev')
+const btnNext = document.querySelector('#btn-next')
+
+let count = 1
+
+const getData = (id) => {
+    if (id >= 1 && id <= 200) {
+        fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
+            .then(response => response.json())
+            .then(todo => {
+                card.innerHTML = `
+          <h3>${todo.title}</h3>
+          <span>${todo.id}</span>
+          <h4>${todo.completed}</h4>  
+        `
+            })
+    }
+}
+
+btnNext.onclick = () => {
+    count++
+    getData(count)
+}
+
+btnPrev.onclick = () => {
+    if (count > 1) {
+        count--
+        getData(count)
+    }
+}
+
+getData(count)
+
+//////////////////////////////////////DZ6 2-Zadanie ////////////////////////////////////
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then((response) => response.json())
+    .then((data) => console.log(data))
