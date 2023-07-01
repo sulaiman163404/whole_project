@@ -1,0 +1,28 @@
+.card {
+    width: 500px;
+    height: 300px;
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    color: #F79300;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.containerButtons {
+    border-top: 1px solid orange;
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    flex-direction: column;
+}
+
+.responseButtons {
+    margin: 15px 15px;
+}
+#btn-prev {
+    margin-right: 15px;
+}

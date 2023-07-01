@@ -86,3 +86,14 @@
     margin-top: 50px;
 }
 
+.weather {
+    background-color: black;
+}
+.weather p {
+    color: #F79300;
+    padding: 25px;
+}
+
+.weather span {
+    color: #F79300;
+}

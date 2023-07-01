@@ -132,17 +132,19 @@ const btnNext = document.querySelector('#btn-next')
 
 let count = 1
 
-const getData = (id) => {
+const getData = async (id) => {
     if (id >= 1 && id <= 200) {
-        fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
-            .then(response => response.json())
-            .then(todo => {
-                card.innerHTML = `
-          <h3>${todo.title}</h3>
-          <span>${todo.id}</span>
-          <h4>${todo.completed}</h4>  
-        `
-            })
+        try {
+            const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
+            const data = await response.json()
+            card.innerHTML = `
+                <h3>${data.title}</h3>
+                <span>${data.id}</span>
+                <h4>${data.completed}</h4>
+         `
+        } catch (e) {
+            return console.error('ERROR', e)
+        }
     }
 }
 
