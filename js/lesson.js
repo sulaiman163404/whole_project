@@ -92,7 +92,7 @@ const citySearch = () => {
             .then(response => response.json())
             .then(data => {
                 city.innerHTML = data?.name || 'Город не найден...'
-                console.log(data)
+                // console.log(data)
                 temp.innerHTML = data?.main?.temp ? Math.round(data?.main?.temp - 273) + '&deg;C' : '.....'
 
             })

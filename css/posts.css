@@ -26,3 +26,9 @@
 #btn-prev {
     margin-right: 15px;
 }
+.card-image {
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}

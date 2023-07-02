@@ -1,3 +1,17 @@
+const emailCheck = document.querySelector('#gmail_input')
+const checkButton = document.querySelector('#gmail_button')
+const regExp = /^[a-zA-Z0-9._%+-]+@gmail\.com$/ig
+
+checkButton.onclick = () => {
+    const emailValue = emailCheck.value;
+    if (emailValue.match(regExp)){
+        window.alert('Вы авторизованы')
+    }else {
+        window.alert('Не правильно введен email')
+    }
+}
+
+
 // MOVE BLOCK
 const childBlock = document.querySelector('.child_block')
 
@@ -115,6 +129,8 @@ convert(som, usd, eur);
 convert(usd, som, eur);
 convert(eur, som, usd);
 
+
+
 const clearConverter = document.querySelector('#reset-converter')
 clearConverter.addEventListener('click', () => {
     const inputs = document.querySelectorAll('input');
@@ -163,6 +179,6 @@ btnPrev.onclick = () => {
 getData(count)
 
 //////////////////////////////////////DZ6 2-Zadanie ////////////////////////////////////
-fetch('https://jsonplaceholder.typicode.com/posts')
-    .then((response) => response.json())
-    .then((data) => console.log(data))
+// fetch('https://jsonplaceholder.typicode.com/posts')
+//     .then((response) => response.json())
+//     .then((data) => console.log(data))
